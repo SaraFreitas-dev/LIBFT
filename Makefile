@@ -32,7 +32,8 @@ SRCS    := lib_functions/ft_isalnum.c \
 		   lib_functions\ft_tolower.c \
 		   lib_functions\ft_strchr.c \
 		   lib_functions\ft_strrchr.c \
-		   lib_functions\ft_strncmp.c
+		   lib_functions\ft_strncmp.c \
+		   lib_functions\ft_memcmp.c
 		   
 OBJS    := $(SRCS:.c=.o)
 
@@ -55,7 +56,8 @@ TEST_SRCS := lib_functions/ft_isalnum.c \
 			 lib_functions\ft_strchr.c \
 			 lib_functions\ft_strrchr.c \
 			 lib_functions\ft_strncmp.c \
-			 lib_functions\ft_memchr.c
+			 lib_functions\ft_memchr.c \
+			 lib_functions\ft_memcmp.c
 
 # Default target -> build library
 all: $(NAME)
