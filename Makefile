@@ -44,7 +44,8 @@ SRCS    := lib_functions/ft_isalnum.c \
 		   lib_functions/ft_strnstr.c \
 		   lib_functions/ft_atoi.c \
 		   lib_functions/ft_calloc.c \
-		   lib_functions\ft_strdup.c
+		   lib_functions\ft_strdup.c \
+		   lib_add_functions\ft_substr.c
 		   
 OBJS    := $(SRCS:.c=.o)
 
@@ -72,7 +73,8 @@ TEST_SRCS := lib_functions/ft_isalnum.c \
 			 lib_functions/ft_strnstr.c \
 			 lib_functions/ft_atoi.c \
 			 lib_functions/ft_calloc.c \
-			 lib_functions\ft_strdup.c
+			 lib_functions\ft_strdup.c \
+			 lib_add_functions\ft_substr.c
 
 # Default target -> build library
 all: $(NAME)
