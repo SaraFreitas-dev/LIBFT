@@ -15,8 +15,8 @@
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*dest;
-	size_t		i;
-	size_t			len_s;
+	size_t	i;
+	size_t	len_s;
 
 	if (!s)
 		return (NULL);
@@ -36,7 +36,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	dest[i] = '\0';
 	return (dest);
 }
-
+/*
 #include <stdio.h>
 
 int	main(void)
@@ -49,3 +49,4 @@ int	main(void)
 
 	return (0);
 }
+*/
