@@ -41,5 +41,6 @@ int	main(void)
 	size_t len = ft_strlcpy(dst, src, dstsize);
 
 	printf("%zu\n", len);
+	free(dest);
 }
 */

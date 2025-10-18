@@ -1,40 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sarfreit <sarfreit@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/18 20:46:29 by sarfreit          #+#    #+#             */
-/*   Updated: 2025/10/18 20:46:29 by sarfreit         ###   ########.fr       */
+/*   Created: 2025/10/18 21:16:02 by sarfreit          #+#    #+#             */
+/*   Updated: 2025/10/18 21:16:02 by sarfreit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t count, size_t size)
+char	*ft_strdup(const char *s1)
 {
-	size_t			i;
-	unsigned char	*str;
+	size_t	i;
+	char	*dest;
 
 	i = 0;
-	str = malloc (count * size);
-	if (!str)
+	if (!s1)
 		return (NULL);
-	while (i < (count * size))
-		str[i++] = 0;
-	return (str);
+	dest = malloc(ft_strlen(s1) + 1);
+	if (!dest)
+		return (NULL);
+	while (s1[i])
+	{
+		dest[i] = s1[i];
+		i++;
+	}
+	dest[i] = '\0';
+	return (dest);
 }
 /*
 #include <stdio.h>
 
 int	main(void)
 {
-	unsigned char	*str = ft_calloc(5, sizeof(char));
-	printf("Array elements after calloc: ");
-	for (int i = 0; i < 5; i++)
-		printf("%d ", str[i]);
-	free(str);
+	char	*s1 = "hello";
+	char	*dest = ft_strdup(s1);
+
+	printf("%s", dest);
+
 	return (0);
 }
 */
