@@ -23,58 +23,40 @@ endif
 
 # Library settings
 NAME    := libft.a
-SRCS    := lib_functions/ft_isalnum.c \
-           lib_functions/ft_isalpha.c \
-           lib_functions/ft_isdigit.c \
-		   lib_functions/ft_isascii.c \
-		   lib_functions/ft_isprint.c \
-		   lib_functions/ft_strlen.c \
-		   lib_functions/ft_memset.c \
-		   lib_functions/ft_bzero.c \
-		   lib_functions/ft_memcpy.c \
-		   lib_functions/ft_memmove.c \
-		   lib_functions/ft_strlcpy.c \
-		   lib_functions/strlcat.c \
-		   lib_functions/ft_toupper.c \
-		   lib_functions/ft_tolower.c \
-		   lib_functions/ft_strchr.c \
-		   lib_functions/ft_strrchr.c \
-		   lib_functions/ft_strncmp.c \
-		   lib_functions/ft_memcmp.c \
-		   lib_functions/ft_strnstr.c \
-		   lib_functions/ft_atoi.c \
-		   lib_functions/ft_calloc.c \
-		   lib_functions\ft_strdup.c \
-		   lib_add_functions\ft_substr.c
+SRCS    := ft_isalnum.c \
+           ft_isalpha.c \
+           ft_isdigit.c \
+		   ft_isascii.c \
+		   ft_isprint.c \
+		   ft_strlen.c \
+		   ft_memset.c \
+		   ft_bzero.c \
+		   ft_memcpy.c \
+		   ft_memmove.c \
+		   ft_strlcpy.c \
+		   ft_strlcat.c \
+		   ft_toupper.c \
+		   ft_tolower.c \
+		   ft_strchr.c \
+		   ft_strrchr.c \
+		   ft_strncmp.c \
+		   ft_memcmp.c \
+		   ft_strnstr.c \
+		   ft_atoi.c \
+		   ft_calloc.c \
+		   ft_strdup.c \
+		   ft_substr.c \
+		   ft_strjoin.c \
+		   ft_strtrim.c \
+		   ft_putchar_fd.c \
+		   ft_putendl_fd.c \
+		   ft_putstr_fd.c
 		   
 OBJS    := $(SRCS:.c=.o)
 
 # Test program
 TEST    := test.exe
-TEST_SRCS := lib_functions/ft_isalnum.c \
-             lib_functions/ft_isalpha.c \
-             lib_functions/ft_isdigit.c \
-			 lib_functions/ft_isascii.c \
-			 lib_functions/ft_isprint.c \
-			 lib_functions/ft_strlen.c \
-			 lib_functions/ft_memset.c \
-			 lib_functions/ft_bzero.c \
-			 lib_functions/ft_memcpy.c \
-			 lib_functions/ft_memmove.c \
-			 lib_functions/ft_strlcpy.c \
-			 lib_functions/strlcat.c \
-			 lib_functions/ft_toupper.c \
-			 lib_functions/ft_tolower.c \
-			 lib_functions/ft_strchr.c \
-			 lib_functions/ft_strrchr.c \
-			 lib_functions/ft_strncmp.c \
-			 lib_functions/ft_memchr.c \
-			 lib_functions/ft_memcmp.c \
-			 lib_functions/ft_strnstr.c \
-			 lib_functions/ft_atoi.c \
-			 lib_functions/ft_calloc.c \
-			 lib_functions\ft_strdup.c \
-			 lib_add_functions\ft_substr.c
+TEST_SRCS := ft_putstr_fd.c
 
 # Default target -> build library
 all: $(NAME)
