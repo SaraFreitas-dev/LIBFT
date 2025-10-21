@@ -14,13 +14,6 @@
 CC      := gcc
 CFLAGS  := -Wall -Wextra -Werror -I .
 
-# Detectar o sistema operativo
-ifeq ($(OS),Windows_NT)
-    SEP = \\
-else
-    SEP = /
-endif
-
 # Library settings
 NAME    := libft.a
 SRCS    := ft_isalnum.c \
@@ -50,13 +43,14 @@ SRCS    := ft_isalnum.c \
 		   ft_strtrim.c \
 		   ft_putchar_fd.c \
 		   ft_putendl_fd.c \
-		   ft_putstr_fd.c
+		   ft_putstr_fd.c \
+		   ft_split.c
 		   
 OBJS    := $(SRCS:.c=.o)
 
 # Test program
 TEST    := test.exe
-TEST_SRCS := ft_putstr_fd.c
+TEST_SRCS := ft_split.c
 
 # Default target -> build library
 all: $(NAME)
@@ -65,7 +59,7 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	ar rcs $@ $^
 
-# Build the test executable (links directly with .c files, or with libft.a if you prefer)
+# Build the test executable (links directly with .c files, or with libft.a)
 $(TEST): $(TEST_SRCS) $(NAME)
 	$(CC) $(CFLAGS) $(TEST_SRCS) -L . -lft -o $@
 
