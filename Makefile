@@ -46,13 +46,15 @@ SRCS    := ft_isalnum.c \
 		   ft_putstr_fd.c \
 		   ft_split.c \
 		   ft_itoa.c \
-		   ft_strmapi.c
+		   ft_strmapi.c \
+		   ft_striteri.c \
+		   ft_striteri.c
 
 OBJS    := $(SRCS:.c=.o)
 
 # Test program
 TEST    := test.exe
-TEST_SRCS := ft_strmapi.c
+TEST_SRCS := ft_striteri.c
 
 # Default target -> build library
 all: $(NAME)
