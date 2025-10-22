@@ -49,7 +49,7 @@ static int	count_fields(const char *s, char sep)
 	return (field_len);
 }
 
-void	*free_split(char **s)
+static void	*free_split(char **s)
 {
 	int	i;
 

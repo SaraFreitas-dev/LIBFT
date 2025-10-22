@@ -1,46 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sarfreit <sarfreit@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/11 02:17:45 by sarfreit          #+#    #+#             */
-/*   Updated: 2025/10/11 02:17:45 by sarfreit         ###   ########.fr       */
+/*   Created: 2025/10/22 19:15:13 by sarfreit          #+#    #+#             */
+/*   Updated: 2025/10/22 19:15:13 by sarfreit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
+void	ft_putnbr_fd(int n, int fd)
 {
-	size_t	len;
-	size_t	i;
+	long	nbr;
 
-	i = 0;
-	len = ft_strlen(src);
-	if (dstsize == 0)
-		return (len);
-	while (src[i] && ((dstsize - 1) > i))
+	nbr = n;
+	if (nbr < 0)
 	{
-		dst[i] = src[i];
-		i++;
+		ft_putchar_fd(('-'), fd);
+		nbr = -nbr;
 	}
-	dst[i] = '\0';
-	return (len);
+	if (nbr >= 10)
+	{
+		ft_putnbr_fd(nbr / 10, fd);
+	}
+	ft_putchar_fd(((nbr % 10) + 48), fd);
 }
 /*
-#include <stdio.h>
-
 int	main(void)
 {
-	char	src[6] = "hello";
-	size_t	dstsize = 4;
-	char	dst[dstsize];
+	ft_putnbr_fd(-123456, 1);
 
-	size_t len = ft_strlcpy(dst, src, dstsize);
-
-	printf("%zu\n", len);
 	return (0);
 }
 */
