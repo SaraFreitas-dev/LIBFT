@@ -44,13 +44,13 @@ SRCS    := ft_isalnum.c \
 		   ft_putchar_fd.c \
 		   ft_putendl_fd.c \
 		   ft_putstr_fd.c \
-		   ft_split.c
-		   
+		   ft_split.c \
+		   ft_itoa.c  
 OBJS    := $(SRCS:.c=.o)
 
 # Test program
 TEST    := test.exe
-TEST_SRCS := ft_split.c
+TEST_SRCS := ft_itoa.c  
 
 # Default target -> build library
 all: $(NAME)
