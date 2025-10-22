@@ -54,7 +54,7 @@ OBJS    := $(SRCS:.c=.o)
 
 # Test program
 TEST    := test.exe
-TEST_SRCS := ft_striteri.c
+TEST_SRCS := ft_itoa.c
 
 # Default target -> build library
 all: $(NAME)

@@ -34,29 +34,28 @@ static int	num_counter(long int n)
 
 char	*ft_itoa(int n)
 {
-	int			i;
-	long int	nbr;
-	char		*str;
+	long	nbr;
+	int		len;
+	char	*str;
 
 	nbr = n;
-	str = malloc(sizeof(char) * (num_counter(nbr) + 1));
+	len = num_counter(nbr);
+	str = malloc(sizeof(char) * (len + 1));
 	if (!str)
 		return (NULL);
-	i = num_counter(nbr) - 1;
+	str[len] = '\0';
+	if (nbr == 0)
+		str[0] = '0';
 	if (nbr < 0)
 	{
 		str[0] = '-';
 		nbr = -nbr;
 	}
-	if (nbr == 0)
-		str[i] = '0';
 	while (nbr != 0)
 	{
-		str[i] = (nbr % 10) + '0';
-		nbr = nbr / 10;
-		i--;
+		str[--len] = (nbr % 10) + '0';
+		nbr /= 10;
 	}
-	str[num_counter(nbr)] = '\0';
 	return (str);
 }
 /*
@@ -67,7 +66,7 @@ int	main(void)
 	// num of chars
 	printf("%d\n", num_counter(123));
 
-	printf("%s\n", ft_itoa(0));
+	printf("%s\n", ft_itoa(-123456));
 
 	return (0);
 }

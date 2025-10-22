@@ -25,8 +25,8 @@ int	main(void)
 	char is_not = '\n';
 
 	printf("print: %d, not print: %d\n",
-    ft_isalnum(is_print),
-    ft_isalnum(is_not));
+    ft_isprint(is_print),
+    ft_isprint(is_not));
 
 	return (0);
 }
