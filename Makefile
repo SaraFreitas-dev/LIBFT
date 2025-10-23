@@ -48,14 +48,9 @@ SRCS    := ft_isalnum.c \
 		   ft_itoa.c \
 		   ft_strmapi.c \
 		   ft_striteri.c \
-		   ft_striteri.c \
 		   ft_putnbr_fd.c
 
 OBJS    := $(SRCS:.c=.o)
-
-# Test program
-TEST    := test.exe
-TEST_SRCS := ft_putnbr_fd.c
 
 # Default target -> build library
 all: $(NAME)
@@ -63,6 +58,19 @@ all: $(NAME)
 # Build the library
 $(NAME): $(OBJS)
 	ar rcs $@ $^
+
+# Bonus files
+BONUS_SRCS := ft_lstnew.c \
+			  ft_lstadd_front.c 
+
+BONUS_OBJS := $(BONUS_SRCS:.c=.o)
+
+bonus: $(BONUS_OBJS)
+	ar rcs $(NAME) $(BONUS_OBJS)
+
+# Test program
+TEST    := test.exe
+TEST_SRCS := ft_lstadd_front.c
 
 # Build the test executable (links directly with .c files, or with libft.a)
 $(TEST): $(TEST_SRCS) $(NAME)
@@ -74,11 +82,11 @@ run: $(TEST)
 
 # Cleaning rules
 clean:
-	rm -f $(OBJS) $(TEST)
+	rm -f $(OBJS) $(BONUS_OBJS) $(TEST)
 
 fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
 
-.PHONY: all clean fclean re run
+.PHONY: all clean fclean re run bonus
