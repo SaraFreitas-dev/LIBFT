@@ -61,7 +61,8 @@ $(NAME): $(OBJS)
 
 # Bonus files
 BONUS_SRCS := ft_lstnew.c \
-			  ft_lstadd_front.c 
+			  ft_lstadd_front.c \
+			  ft_lstsize.c
 
 BONUS_OBJS := $(BONUS_SRCS:.c=.o)
 
@@ -70,7 +71,7 @@ bonus: $(BONUS_OBJS)
 
 # Test program
 TEST    := test.exe
-TEST_SRCS := ft_lstadd_front.c
+TEST_SRCS := ft_lstsize.c
 
 # Build the test executable (links directly with .c files, or with libft.a)
 $(TEST): $(TEST_SRCS) $(NAME)
