@@ -1,47 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sarfreit <sarfreit@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/23 12:51:38 by sarfreit          #+#    #+#             */
-/*   Updated: 2025/10/23 12:51:38 by sarfreit         ###   ########.fr       */
+/*   Created: 2025/10/23 19:19:11 by sarfreit          #+#    #+#             */
+/*   Updated: 2025/10/23 20:35:45 by sarfreit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_lstsize(t_list *lst)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	int		counter;
-	t_list	*node;
+	t_list	*last;
 
-	counter = 0;
-	node = lst;
-	while (node)
+	if (!lst || !new)
+		return ;
+	if (*lst == NULL)
+		*lst = new;
+	else
 	{
-		node = node->next;
-		counter++;
+		last = ft_lstlast(*lst);
+		last->next = new;
 	}
-	return (counter);
 }
 /*
 #include <stdio.h>
 
-int	main(void)
+int main(void)
 {
     t_list *list = NULL;
-    t_list *node1 = ft_lstnew("One");
-    t_list *node2 = ft_lstnew("Two");
-    t_list *node3 = ft_lstnew("Three");
+    t_list *node1;
+    t_list *node2;
 
-    ft_lstadd_front(&list, node3);
-    ft_lstadd_front(&list, node2);
-    ft_lstadd_front(&list, node1);
+    node1 = ft_lstnew("Hello");
+    node2 = ft_lstnew("World");
 
-    printf("List size: %d\n", ft_lstsize(list));
+    ft_lstadd_back(&list, node1);
+    ft_lstadd_back(&list, node2);
+	
+    t_list *last = ft_lstlast(list);
 
-	return (0);
+    if (last)
+        printf("Last node: %s\n", (char *)last->content);
+
+    return (0);
 }
 */
