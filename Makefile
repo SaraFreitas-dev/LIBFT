@@ -65,7 +65,9 @@ BONUS_SRCS := ft_lstnew_bonus.c \
 			  ft_lstsize_bonus.c \
 			  ft_lstlast_bonus.c \
 			  ft_lstadd_back_bonus.c \
-			  ft_lstdelone_bonus.c
+			  ft_lstdelone_bonus.c \
+			  ft_lstclear_bonus.c \
+			  ft_lstiter_bonus.c 
 
 BONUS_OBJS := $(BONUS_SRCS:.c=.o)
 
@@ -74,7 +76,7 @@ bonus: $(BONUS_OBJS)
 
 # Test program
 TEST    := test.exe
-TEST_SRCS := ft_lstdelone_bonus.c
+TEST_SRCS := ft_lstiter_bonus.c 
 
 # Build the test executable (links directly with .c files, or with libft.a)
 $(TEST): $(TEST_SRCS) $(NAME)
