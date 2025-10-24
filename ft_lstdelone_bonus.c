@@ -12,14 +12,13 @@
 
 #include "libft.h"
 
+// void	del(void *content);
 void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
-	if (!lst || !del)
-		return ;
 	del(lst->content);
 	free(lst);
 }
-
+/*
 void	del(void *content)
 {
 	free(content);
@@ -27,21 +26,36 @@ void	del(void *content)
 
 #include <stdio.h>
 
-int	main(void)
+int main(void)
 {
-	t_list *list = NULL;
-    t_list *node1;
-    t_list *node2;
+t_list *list = NULL;
+	t_list *node1;
+	t_list *node2;
 
-    node1 = ft_lstnew("Hello");
-    node2 = ft_lstnew("World");
-	
+	char *hello = malloc(6);
+	char *world = malloc(6);
+	strcpy(hello, "Hello");
+	strcpy(world, "World");
+
+	node1 = ft_lstnew(hello);
+	node2 = ft_lstnew(world);
+
 	ft_lstadd_back(&list, node1);
-    ft_lstadd_back(&list, node2);
-	
-	printf("Before: %d\n",ft_lstsize(list));
+	ft_lstadd_back(&list, node2);
+
+	printf("Before: %d elements\n", ft_lstsize(list));
+
+	t_list *tmp = list->next;
+
+	// delete FIRST node
 	ft_lstdelone(list, del);
-	printf("After: %d\n", ft_lstsize(list));
-	
-	return (0);
+
+	// move head
+	list = tmp;
+
+	printf("After: %d elements\n", ft_lstsize(list));
+	ft_lstdelone(list, del);
+
+    return (0);
 }
+*/
