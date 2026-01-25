@@ -6,7 +6,7 @@
 /*   By: sarfreit <sarfreit@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/31 03:42:22 by sarfreit          #+#    #+#             */
-/*   Updated: 2025/10/25 00:28:56 by sarfreit         ###   ########.fr       */
+/*   Updated: 2026/01/25 15:56:55 by sarfreit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,6 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 int		ft_atoi(const char *str);
 void	*ft_calloc(size_t count, size_t size);
 char	*ft_strdup(const char *s1);
-char	*ft_itoa(int n);
 
 //------Additional functions----------
 char	*ft_substr(char const *s, unsigned int start, size_t len);
@@ -57,7 +56,6 @@ void	ft_putstr_fd(char *s, int fd);
 char	**ft_split(char const *s, char c);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
-void	ft_putnbr_fd(int n, int fd);
 
 //----------------BONUS---------------
 t_list	*ft_lstnew(void *content);
@@ -69,5 +67,10 @@ void	ft_lstdelone(t_list *lst, void (*del)(void*));
 void	ft_lstclear(t_list **lst, void (*del)(void*));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+
+//---------------EXTRAS---------------
+
+int		ft_strcmp(const char *s1, const char *s2);
+long	ft_atol(char *s);
 
 #endif
