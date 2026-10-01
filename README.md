@@ -1,6 +1,6 @@
 📚 Libft
 
-«42 School — Common Core Project»
+42 School — Common Core Project
 
 Libft is the first project of the 42 School Common Core.
 
@@ -166,33 +166,46 @@ These functions are included as additional utilities for future projects.
 
 Clone the repository:
 
+```bash
 git clone https://github.com/SaraFreitas-dev/LIBFT.git
 cd LIBFT
+```
 
 Compile the mandatory library
 
+```bash
 make
+```
 
 This creates:
 
+```bash
 libft.a
+```
 
 Compile with bonus functions
 
+```bash
 make bonus
+```
 
 Remove object files
 
+```bash
 make clean
+```
 
 Remove object files and the library
 
+```bash
 make fclean
+```
 
 Recompile everything
 
+```bash
 make re
-
+```
 ---
 
 📦 Using Libft in a Project
@@ -201,11 +214,13 @@ Once "libft.a" has been created, it can be compiled together with another C proj
 
 For example:
 
+```bash
 gcc main.c -L. -lft -I .
 
 And include the library in the source file:
 
 #include "libft.h"
+```
 
 ---
 
