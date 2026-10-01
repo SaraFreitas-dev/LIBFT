@@ -25,6 +25,7 @@ The project is compiled with:
 
 📂 Project Structure
 
+```text
 LIBFT/
 │
 ├── Makefile
@@ -38,6 +39,7 @@ LIBFT/
 │
 └── Bonus
     └── Linked List Functions
+```
 
 ---
 
