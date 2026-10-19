@@ -1,4 +1,8 @@
-📚 Libft
+<p align="center">
+  <a href="https://github.com/SaraFreitas-dev/42_School_Badges"><img src="https://raw.githubusercontent.com/SaraFreitas-dev/42_School_Badges/main/Badges/Milestone_0/svg/libft.svg" width="350" alt="libft"/></a>
+</p>
+
+# 📚 Libft
 
 42 School — Common Core Project
 
